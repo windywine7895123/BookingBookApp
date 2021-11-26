@@ -25,6 +25,7 @@ export class BooksComponent implements OnInit {
 
   onSelect(book: Book): void {
     this.selectedBook = book;
+    this.messageService.add(`BooksComponent: Selected hero id=${book.id}`);
  
  }
 }
