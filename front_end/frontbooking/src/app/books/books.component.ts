@@ -9,23 +9,18 @@ import { MessageService } from '../message.service';
   styleUrls: ['./books.component.css'],
 })
 export class BooksComponent implements OnInit {
-  
-  selectedBook?: Book;
-  books: Book[] = [];
+  books: any[] = [];
 
-  getBooks(): void {
-    this.bookService.getBooks()
-        .subscribe(books => this.books = books);
-  }
-  constructor(private bookService: BookService, private messageService: MessageService) {}
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
     this.getBooks();
   }
 
-  onSelect(book: Book): void {
-    this.selectedBook = book;
-    this.messageService.add(`BooksComponent: Selected hero id=${book.id}`);
- 
- }
+  getBooks(): void {
+    this.bookService.getBooks()
+    .subscribe(data => {
+      this.books = data
+    console.log(data) });
+  }
 }
