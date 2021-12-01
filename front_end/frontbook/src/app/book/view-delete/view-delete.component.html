@@ -1,0 +1,49 @@
+ <!-- Modal trigger Button-->
+<button type="button" class="btn btn-primary float-right m-2" 
+    data-toggle="modal" data-target="#exampleModal"
+    (click)="addBook()"
+    data-backdrop="static" data-keyboard="false"
+>
+    Add Book
+  </button> 
+
+ <!-- Modal-->
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+          <button type="button" class="close" 
+          data-dismiss="modal" aria-label="Close"
+          (click)="closeBooklist()" >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <app-add-update [book]="book" *ngIf="ActivateAddEditBook">
+            </app-add-update>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  
+<table class="table table striped">
+    <thead>
+        <tr>
+            <th>BookId</th>
+            <th>BookName</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of BookList">
+            <td>{{dataItem.BookId}}</td>
+            <td>{{dataItem.BookName}}</td>
+            <td>
+                <button type="button" class="btn btn-light mr-1">Edit</button>
+                <button type="button" class="btn btn-light mr-1">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
