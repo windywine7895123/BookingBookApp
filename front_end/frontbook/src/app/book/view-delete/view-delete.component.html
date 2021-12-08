@@ -1,8 +1,7 @@
  <!-- Modal trigger Button-->
 <button type="button" class="btn btn-primary float-right m-2" 
     data-toggle="modal" data-target="#exampleModal"
-    (click)="addBook()"
-    data-backdrop="static" data-keyboard="false"
+    (click)="addBook()"data-backdrop="static" data-keyboard="false"
 >
     Add Book
   </button> 
@@ -38,11 +37,13 @@
     </thead>
     <tbody>
         <tr *ngFor="let dataItem of BookList">
-            <td>{{dataItem.BookId}}</td>
-            <td>{{dataItem.BookName}}</td>
+            <td>{{dataItem.id}}</td>
+            <td>{{dataItem.name}}</td>
+            <td><img src="{{dataItem.image}}" alt=""></td>
             <td>
                 <button type="button" class="btn btn-light mr-1">Edit</button>
-                <button type="button" class="btn btn-light mr-1">Delete</button>
+                <button type="button" class="btn btn-light mr-1"(click)="deleteBook(dataItem)" >Delete</button>
+                
             </td>
         </tr>
     </tbody>

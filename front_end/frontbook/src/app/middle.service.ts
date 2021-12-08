@@ -5,27 +5,27 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MiddleService {
-    readonly BookUrl = "http://localhost:8000"
+    readonly BookUrl = "http://localhost:8000/book/"
 
   constructor(private http:HttpClient) { }
 
   getBooklist():Observable<any[]>{
-    return this.http.get<any[]>(this.BookUrl+"/book/");
+    return this.http.get<any[]>(this.BookUrl);
   
   }
   addBook(val:any){
-    return this.http.post(this.BookUrl + '/book/',val);
+    return this.http.post(this.BookUrl,val);
   }
 
   updateBook(val:any){
-    return this.http.put(this.BookUrl + '/book/',val);
+    return this.http.put(this.BookUrl,val);
   }
 
   deleteBook(val:any){
-    return this.http.delete(this.BookUrl + '/book/'+val);
+    return this.http.delete(this.BookUrl+val);
   }
 
   getBooknamelist():Observable<any[]>{
-    return this.http.get<any[]>(this.BookUrl+"/book/");
+    return this.http.get<any[]>(this.BookUrl);
   }
 }

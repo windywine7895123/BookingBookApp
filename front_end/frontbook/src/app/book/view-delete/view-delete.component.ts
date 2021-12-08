@@ -12,7 +12,7 @@ export class ViewDeleteComponent implements OnInit {
 
   BookList:any=[]
   ModalTitle: string | undefined;
-  ActivateAddEditBook:boolean = false;
+  ActivateAddEditBook:boolean = true;
   book:any;
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class ViewDeleteComponent implements OnInit {
   addBook(){
     this.book={
       id:0,
-      Bookname:""
+      name:""
     }
     this.ModalTitle="Add Book";
     this.ActivateAddEditBook=true;

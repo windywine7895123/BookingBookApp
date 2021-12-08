@@ -12,6 +12,7 @@ export class AddUpdateComponent implements OnInit {
   id: string | undefined;
   bookName: string | undefined;
   bookAuthor: string | undefined;
+  bookPubdate:string | undefined;
   bookPic: string | undefined;
   bookCategory: string | undefined;
 
@@ -19,27 +20,30 @@ export class AddUpdateComponent implements OnInit {
     this.id = this.book.id;
     this.bookName = this.book.bookName;
     this.bookAuthor = this.book.bookAuthor;
+    this.bookPubdate = this.book.bookPubdate;
     this.bookPic = this.book.bookPic;
     this.bookCategory = this.book.bookCategory;
   }
-  AddBook() {
+  addBook() {
     var val = {
       bookname: this.bookName,
-      amount: this.bookAuthor,
-      pic_url: this.bookPic,
-      price: this.bookCategory,
+      author: this.bookAuthor,
+      pubdate:this.bookPubdate,
+      picture: this.bookPic,
+      category: this.bookCategory,
     }
     this.service.addBook(val).subscribe(res => {
       alert(res.toString());
     });
   }
-  UpdateBook() {
+  updateBook() {
     var val = {
       id: this.id,
       bookname: this.bookName,
-      amount: this.bookAuthor,
-      pic_url: this.bookPic,
-      price: this.bookCategory,
+      author: this.bookAuthor,
+      pubdate:this.bookPubdate,
+      picture: this.bookPic,
+      category: this.bookCategory,
     }
     this.service.updateBook(val).subscribe(res => {
       alert(res.toString());
