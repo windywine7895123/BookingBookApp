@@ -1,0 +1,29 @@
+.product-item-content {
+    border: 1px solid var(--surface-d);
+    border-radius: 10px;
+    margin: .3rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.product-image {
+    width: 50%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.button {
+    padding: 5px;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+    transform: translateY(-50%);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    font-size: 40px;
+}

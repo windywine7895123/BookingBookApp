@@ -1,0 +1,25 @@
+<app-menubar></app-menubar>
+<h1 style="text-align: center;"> Admin </h1>
+<p-table [value]="books">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Public Date</th>
+            <th>Catagories</th>
+            <th>Image</th>
+            <th><option value=""></option></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-books>
+        <tr>
+            <td><a routerLink="/edit/{{books.id}}">{{books.name}}</a></td>
+            <td><a routerLink="/edit/{{books.id}}">{{books.author}}</a></td>
+            <td><a routerLink="/edit/{{books.id}}">{{books.pub_date}}</a></td>
+            <td><a routerLink="/edit/{{books.id}}">{{books.category}}</a></td>
+            <td><img src="{{books.image}}" style="width: 100px;height: 100px;" routerLink="/edit/{{books.id}}"></td>
+            <td><button pButton pRipple type="button" icon="pi pi-pencil" class="p-button-rounded p-button-info p-button-text" routerLink="/edit/{{books.id}}"></button><button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-text"
+                    (click)="delete(books)"></button></td>
+        </tr>
+    </ng-template>
+</p-table>

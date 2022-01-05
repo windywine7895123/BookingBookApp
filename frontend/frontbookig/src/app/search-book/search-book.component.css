@@ -1,0 +1,18 @@
+.search-result {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}
+
+.bookbox:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+

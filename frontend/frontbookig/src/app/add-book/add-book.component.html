@@ -1,0 +1,56 @@
+<app-menubar></app-menubar>
+<div class="add-book">
+    <h2>Add Book : {{bookName | uppercase}} </h2>
+    <br>
+    <table class="center">
+        <tr>
+            <th>
+                <tr>
+                    <th><label for="book-name">Name: </label></th>
+                    <th><input type="text" pInputText placeholder="enter name" [(ngModel)]="bookName" /></th>
+                </tr>
+                <tr>
+                    <td><label for="book-author">Author: </label></td>
+                    <td><input type="text" pInputText placeholder="enter author" [(ngModel)]="bookAuthor" /></td>
+                </tr>
+                <tr>
+                    <td><label for="book-pub_date">Public Date: </label></td>
+                    <td><input type="text" pInputText placeholder="enter pubdate" [(ngModel)]="bookPub_Date" /></td>
+                </tr>
+                <tr>
+                    <td><label for="book-Category">Catagories: </label></td>
+                    <td>
+                        <select class="custom-select" [(ngModel)]="bookCategory" style="width:200px; height:38px; background-color: #fff; border: 1px solid transparent; border-color: #CED4DA; color:#495057; ">
+                    <option>Select</option>
+                    <option value="FIC">fiction</option>
+                    <option value="DOC">documentary</option>
+                    <option value="SCI">science</option>
+                    <option value="HIS">history</option>
+                    <option value="TEC">technology</option>
+                </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="book-image">Image: </label></td>
+                    <td><input type="text" pInputText placeholder="URL image" [(ngModel)]="bookImage" /></td>
+                </tr>
+                <tr>
+                    <td><label for="book-Category">Detail: </label></td>
+                    <td>
+                        <span class="p-float-label">
+                        <textarea inputId="textarea" rows="3" cols="25" [(ngModel)]="bookDescribe" pInputTextarea autoResize="autoResize"></textarea>
+                        </span>
+                    </td>
+                </tr>
+
+            </th>
+
+            <th>
+                <img src="{{bookImage}}" style="width: 300px; height: 300px;">
+            </th>
+        </tr>
+        <tr>
+            <button pButton pRipple type="button" label="Add" class="p-button-rounded p-button-info" (click)="AddBook()" routerLink ="/admin"></button>
+        </tr>
+    </table>
+</div>

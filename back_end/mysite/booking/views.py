@@ -39,7 +39,7 @@ def bookApi(request,id=0):
             return JsonResponse("Updated Successfully!!", safe=False)
         return JsonResponse("Failed to Update.", safe=False)
 
-    elif request.method=='DELETE':
+    elif request.method=='DELETำำำำำำำำำำำำำำำำำำำำำำำำำำำำำำE':
         book=Book.objects.get(id=id)
         book.delete()
         return JsonResponse("Deleted Succeffully!!", safe=False)

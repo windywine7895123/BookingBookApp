@@ -1,0 +1,22 @@
+<app-menubar></app-menubar>
+<h1 style="text-align: center;"> Search </h1>
+
+<body>
+    <div id="search-component">
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input #searchBox type="text" pInputText placeholder="enter name" (input)="search(searchBox.value)" />
+        </span>
+        <br>
+        <br>
+        <div class="search-result">
+            <div class="search-result" *ngFor="let book of books$ | async">
+                <a routerLink="/edit/{{book.id}}">
+                    <span class="bookbox">
+                        <img src="{{book.image}}" style="width: 200px;height: 200px;"> <br> {{book.name}}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
